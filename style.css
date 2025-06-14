@@ -1,0 +1,341 @@
+/* Estilos base para asegurar la fuente Poppins y el fondo general */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8fafc; /* Un color de fondo claro, similar al slate-50 de Tailwind */
+  color: #334155; /* Texto gris oscuro */
+  line-height: 1.6; /* Altura de línea para mejor legibilidad */
+}
+
+/* Estilos para encabezados */
+h1, h2, h3, h4 {
+  font-weight: 700; /* Negrita */
+  color: #1e293b; /* Encabezados más oscuros */
+}
+
+/* Estilos personalizados para elementos que podrían no estar cubiertos completamente por Tailwind o para asegurar diseños específicos */
+.hero-section h1 span {
+  color: #6B46C1; /* Un color distintivo para el span en el título */
+}
+
+/* Estilos de los botones */
+.btn-primary {
+  background-color: #6B46C1; /* Morado */
+  color: white;
+  padding: 0.75rem 1.5rem; /* Relleno vertical y horizontal */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: 600; /* Seminegrita */
+  transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+  display: inline-block; /* Para que el padding y margin funcionen correctamente */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+.btn-primary:hover {
+  background-color: #5A3A9D; /* Morado más oscuro al pasar el ratón */
+}
+
+.btn-secondary {
+  background-color: transparent; /* Fondo transparente */
+  color: #6B46C1; /* Color de texto morado */
+  border: 2px solid #6B46C1; /* Borde morado */
+  padding: 0.625rem 1.375rem; /* Relleno ajustado por el borde */
+  border-radius: 0.5rem; /* Bordes redondeados */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: 600; /* Seminegrita */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+  display: inline-block;
+}
+.btn-secondary:hover {
+  background-color: #6B46C1; /* Fondo morado al pasar el ratón */
+  color: white; /* Texto blanco al pasar el ratón */
+}
+
+/* Estilos específicos del simulador de chat */
+.chat-container {
+  background-color: white; /* Fondo blanco para el chat */
+  border-radius: 0.75rem; /* Bordes redondeados grandes */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra pronunciada */
+  overflow: hidden; /* Oculta contenido que se desborda */
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en columna */
+  height: 400px; /* Altura fija para la demostración del chat */
+  max-width: 400px; /* Ancho máximo para el contenedor del chat */
+  margin: 0 auto; /* Centra el contenedor del chat en pantallas pequeñas */
+}
+
+.chat-header {
+  background-color: #6B46C1; /* Fondo morado */
+  color: white;
+  padding: 0.75rem 1rem; /* Relleno */
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chat-header span {
+  font-size: 0.875rem; /* Tamaño de fuente pequeño */
+}
+
+.chat-messages {
+  flex-grow: 1; /* Permite que crezca para ocupar el espacio disponible */
+  padding: 1rem; /* Relleno */
+  overflow-y: auto; /* Habilita el scroll si el contenido es largo */
+  background-color: #f8fafc; /* Fondo claro para los mensajes */
+}
+
+.message {
+  margin-bottom: 0.75rem; /* Margen inferior */
+  padding: 0.625rem 1rem; /* Relleno */
+  border-radius: 0.625rem; /* Bordes redondeados */
+  max-width: 80%; /* Ancho máximo del mensaje */
+}
+.bot-message {
+  background-color: #e2e8f0; /* Fondo gris claro */
+  align-self: flex-start; /* Alinea a la izquierda */
+  margin-right: auto; /* Empuja a la izquierda */
+}
+.user-message {
+  background-color: #6B46C1; /* Fondo morado */
+  color: white;
+  align-self: flex-end; /* Alinea a la derecha */
+  margin-left: auto; /* Empuja a la derecha */
+}
+
+.chat-input {
+  display: flex;
+  padding: 0.75rem 1rem; /* Relleno */
+  border-top: 1px solid #e2e8f0; /* Borde superior */
+  background-color: white;
+}
+.chat-input input {
+  flex-grow: 1; /* Permite que el input crezca */
+  border: 1px solid #cbd5e1; /* Borde */
+  border-radius: 0.375rem; /* Bordes redondeados */
+  padding: 0.5rem 0.75rem; /* Relleno */
+  margin-right: 0.5rem; /* Margen a la derecha */
+  outline: none; /* Elimina el contorno al enfocar */
+}
+.chat-input input:focus {
+  border-color: #6B46C1; /* Color de borde al enfocar */
+  box-shadow: 0 0 0 2px rgba(107, 70, 193, 0.2); /* Sombra al enfocar */
+}
+.chat-input button {
+  background-color: #6B46C1;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer; /* Cursor de puntero */
+  transition: background-color 0.3s ease;
+}
+.chat-input button:hover {
+  background-color: #5A3A9D;
+}
+
+/* Contenedor principal para la sección de héroe y chat */
+.main-layout-container {
+  display: flex;
+  flex-direction: column; /* Por defecto en columna en pantallas pequeñas */
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  padding: 1rem; /* Relleno */
+  min-height: calc(100vh - 150px); /* Altura mínima, ajusta según el tamaño de tu header/footer */
+  background: linear-gradient(to bottom right, #f3e8ff, #e0f2fe); /* Fondo con gradiente sutil */
+  border-radius: 1rem; /* Bordes redondeados grandes */
+  margin: 2rem auto; /* Centra el contenedor y añade margen */
+  max-width: 1400px; /* Ancho máximo para toda la sección */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05); /* Sombra para profundidad */
+}
+
+@media (min-width: 1024px) { /* A partir de pantallas grandes (lg breakpoint) */
+  .main-layout-container {
+    flex-direction: row; /* En fila en pantallas grandes */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 4rem; /* Espacio entre los elementos (chat y héroe) */
+    padding: 4rem; /* Más relleno en pantallas grandes */
+  }
+}
+
+.hero-section {
+  text-align: center; /* Centra el texto por defecto */
+  padding: 2rem; /* Relleno */
+  flex: 1; /* Permite que crezca */
+  max-width: 100%; /* Ancho completo en pantallas pequeñas */
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    text-align: left; /* Alinea el texto a la izquierda en pantallas grandes */
+    max-width: 50%; /* Ocupa la mitad del ancho en pantallas grandes */
+  }
+}
+
+.chat-demo {
+  flex: 1; /* Permite que crezca */
+  max-width: 100%; /* Ancho completo en pantallas pequeñas */
+  padding: 2rem; /* Relleno */
+}
+
+@media (min-width: 1024px) {
+  .chat-demo {
+    max-width: 400px; /* Ancho máximo fijo para la demostración del chat en pantallas grandes */
+  }
+}
+
+.logo-hero {
+  width: 96px; /* Ancho del logo (w-24 de Tailwind) */
+  height: 96px; /* Alto del logo (h-24 de Tailwind) */
+  margin: 0 auto 1.5rem auto; /* Centra el logo y añade margen inferior */
+  display: block; /* Asegura que margin auto funcione */
+}
+
+@media (min-width: 1024px) {
+  .logo-hero {
+    margin-left: 0; /* Alinea el logo a la izquierda en pantallas grandes */
+    margin-right: auto;
+  }
+}
+
+/* Ajustes para las secciones de contenido principal */
+main {
+  padding: 2rem 1rem; /* Añade relleno al contenido principal */
+  max-width: 1200px; /* Limita el ancho del contenido principal */
+  margin: 0 auto; /* Centra el contenido principal */
+}
+
+/* Estilos para la sección Misión y Visión */
+.mision-vision {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem; /* Aumenta el espacio entre tarjetas */
+  padding: 3rem 2rem; /* Más relleno */
+  margin-top: 3rem; /* Más margen superior */
+  background: linear-gradient(to right, #f0f9ff, #e0f2fe); /* Gradiente de fondo sutil */
+  border-radius: 1.5rem; /* Bordes más redondeados para la sección */
+  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1), 0 6px 10px -3px rgba(0, 0, 0, 0.05); /* Sombra más pronunciada */
+}
+
+.mision-vision .card {
+  background-color: white;
+  border-radius: 1.25rem; /* Bordes más redondeados para las tarjetas */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Sombra más fuerte */
+  padding: 2.5rem; /* Más relleno */
+  text-align: center;
+  flex: 1;
+  min-width: 280px;
+  max-width: 48%; /* Ajuste para dejar un pequeño espacio entre ellas */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para efectos hover */
+  border: 1px solid #e2e8f0; /* Borde sutil */
+}
+
+.mision-vision .card:hover {
+  transform: translateY(-10px); /* Efecto de elevación al pasar el ratón */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* Sombra aún más fuerte al pasar el ratón */
+}
+
+.mision-vision .card h3 {
+  font-size: 1.75rem; /* Tamaño de fuente más grande para los títulos */
+  margin-bottom: 1rem;
+  color: #4c1d95; /* Un morado más oscuro para los títulos */
+}
+
+.mision-vision .card p {
+  font-size: 1.1rem; /* Tamaño de fuente ligeramente más grande para el texto */
+  color: #475569; /* Gris pizarra más oscuro */
+  line-height: 1.8; /* Mayor altura de línea para legibilidad */
+}
+
+@media (max-width: 768px) {
+  .mision-vision .card {
+    max-width: 95%; /* Ocupa casi todo el ancho en móviles */
+  }
+}
+
+.descarga {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #eef2ff; /* Fondo azul claro */
+  margin-top: 2rem;
+  border-radius: 12px;
+}
+
+.descarga .btn {
+  display: inline-block;
+  background-color: #4f46e5; /* Índigo */
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 9999px; /* Completamente redondeado */
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.descarga .btn:hover {
+  background-color: #4338ca; /* Índigo más oscuro al pasar el ratón */
+}
+
+.descarga .nota {
+  margin-top: 1rem;
+  font-size: 0.875rem; /* Tamaño de fuente pequeño */
+  color: #64748b; /* Gris pizarra */
+}
+
+footer {
+  background-color: #1e293b; /* Fondo gris oscuro */
+  color: white;
+  padding: 3rem 2rem;
+  margin-top: 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Columnas responsivas */
+  gap: 2rem; /* Espacio entre columnas */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column h4 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #94a3b8; /* Gris pizarra claro */
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+  color: #cbd5e1; /* Gris pizarra muy claro */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #334155; /* Borde superior */
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.footer-bottom a {
+  color: #94a3b8;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: white;
+}
